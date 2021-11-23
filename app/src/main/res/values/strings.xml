@@ -7,5 +7,7 @@
     <string name="description_room_list">Quarto de 20m² com uma cama de casal, armário, banheiro e boa iluminação.</string>
     <string name="daily_price_room_list">R$ 140,00/diária</string>
     <string name="reserve_room_list">Reservar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

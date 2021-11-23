@@ -1,4 +1,4 @@
-package br.com.unip.hotelapp.ui;
+package br.com.unip.hotelapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
