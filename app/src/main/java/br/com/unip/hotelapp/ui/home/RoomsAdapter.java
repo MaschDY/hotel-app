@@ -60,6 +60,7 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.ViewHolder> 
                 );
                 binding.descriptionTextView.setText(R.string.description_default_room_list);
             }
+            binding.reserveButton.setEnabled(item.getStatus().equals("Disponível"));
             binding.typeTextView.setText(item.getType());
             binding.dailyPriceTextView.setText("R$ " + item.getPrice() + "/diária");
             binding.statusTextView.setText("Status: " + item.getStatus());

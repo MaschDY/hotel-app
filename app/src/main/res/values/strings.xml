@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">HotelApp</string>
 
-    <string name="title_home_fragment">Quartos Disponíveis</string>
-
-    <string name="type_room_list">Quarto Simples</string>
+    <string name="title_home_fragment">Art Hotel Quartos</string>
+    <string name="type_room_list">Quarto Padrão</string>
     <string name="description_default_room_list">Quarto de 20m² com uma cama de casal, armário, banheiro e boa iluminação.</string>
     <string name="description_master_room_list">Quarto de 40m² com uma cama de casal kingsize, armário, banheiro, boa iluminação e vista maravilhosa.</string>
     <string name="daily_price_room_list">R$ 140,00/diária</string>
