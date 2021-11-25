@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginBottom="20dp"
     android:elevation="4dp"
     app:cardUseCompatPadding="true"
@@ -41,7 +42,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/description_room_list"
+            android:text="@string/description_default_room_list"
             android:textColor="@color/grey"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,9 +56,18 @@
             android:text="@string/daily_price_room_list"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/reserve_button"
+            app:layout_constraintBottom_toTopOf="@+id/status_textView"
             app:layout_constraintStart_toStartOf="@+id/description_textView"
             app:layout_constraintTop_toTopOf="@+id/reserve_button" />
+
+        <TextView
+            android:id="@+id/status_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Status: Disponível"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/reserve_button"
+            app:layout_constraintStart_toStartOf="@+id/daily_price_textView" />
 
         <Button
             android:id="@+id/reserve_button"

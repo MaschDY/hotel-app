@@ -1,6 +1,7 @@
 package br.com.unip.hotelapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
 
 import android.os.Bundle;
 

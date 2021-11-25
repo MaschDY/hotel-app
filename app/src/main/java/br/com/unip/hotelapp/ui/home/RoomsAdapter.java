@@ -5,10 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import br.com.unip.hotelapp.R;
 import br.com.unip.hotelapp.databinding.ItemListHomeRoomBinding;
 import br.com.unip.hotelapp.model.Room;
 
@@ -40,13 +42,27 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.ViewHolder> 
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ItemListHomeRoomBinding binding;
+
         public ViewHolder(ItemListHomeRoomBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
 
         private void bind(Room item) {
-//            binding.typeTextView.setText(item.getType());
+            if (item.getType().equals("Master")) {
+                binding.roomImageView.setImageDrawable(
+                        ContextCompat.getDrawable(itemView.getContext(), R.drawable.master_room)
+                );
+                binding.descriptionTextView.setText(R.string.description_master_room_list);
+            } else {
+                binding.roomImageView.setImageDrawable(
+                        ContextCompat.getDrawable(itemView.getContext(), R.drawable.simple_room)
+                );
+                binding.descriptionTextView.setText(R.string.description_default_room_list);
+            }
+            binding.typeTextView.setText(item.getType());
+            binding.dailyPriceTextView.setText("R$ " + item.getPrice() + "/diária");
+            binding.statusTextView.setText("Status: " + item.getStatus());
         }
 
         @Override
