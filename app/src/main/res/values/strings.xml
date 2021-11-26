@@ -7,7 +7,8 @@
     <string name="description_master_room_list">Quarto de 40m² com uma cama de casal kingsize, armário, banheiro, boa iluminação e vista maravilhosa.</string>
     <string name="daily_price_room_list">R$ 140,00/diária</string>
     <string name="reserve_room_list">Reservar</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="consult_reservations">Consulta de Reservas</string>
+    <string name="room_reservation">Reserva de Quarto</string>
+    <string name="hint_name">Nome</string>
 
 </resources>

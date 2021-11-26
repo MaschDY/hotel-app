@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.util.List;
@@ -23,28 +24,23 @@ public class HomeFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState
     ) {
         binding = FragmentHomeBinding.inflate(getLayoutInflater());
-//        Client client = new ClientDao().selectClient();
-//        System.out.println(client.getName());
-//        ConnectionHelper connectionHelper = new ConnectionHelper();
-//        Connection connection = connectionHelper.connect();
-//        try {
-//            if (connection != null) {
-//                if (!connection.isClosed())
-//                    Log.i("SQL", "Connection success!");
-//                else
-//                    Log.i("SQL", "Connection closed!");
-//            } else {
-//                Log.i("SQL", "Connection null, not performed!");
-//            }
-//        } catch (Exception e) {
-//            //e.printStackTrace();
-//            Log.e("Erro: ", "Connection failed!!! " + e.getMessage());
-//        }
 
         List<Room> rooms = new RoomDao().selectRoom();
+
         binding.roomsRecyclerView.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
         RoomsAdapter adapter = new RoomsAdapter(rooms);
         binding.roomsRecyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener((v, position) -> {
+            final Room item = rooms.get(position);
+            Integer roomId = item.getId();
+            navigateToReserve(roomId);
+        });
+
         return binding.getRoot();
+    }
+
+    private void navigateToReserve(int roomId) {
+        Navigation.findNavController(requireView()).navigate(HomeFragmentDirections.actionHomeFragmentToBookingFragment(roomId));
     }
 }

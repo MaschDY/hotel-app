@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.HotelApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/light_blue_600</item>
-        <item name="colorPrimaryVariant">@color/light_blue_900</item>
+        <item name="colorPrimary">#977af2</item>
+        <item name="colorPrimaryVariant">#977af2</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/cyan_A700</item>
-        <item name="colorSecondaryVariant">@color/cyan_A200</item>
+        <item name="colorSecondary">#fa8072</item>
+        <item name="colorSecondaryVariant">#fa8072</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorAccent</item>

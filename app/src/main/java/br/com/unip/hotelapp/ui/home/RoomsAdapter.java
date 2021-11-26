@@ -16,6 +16,7 @@ import br.com.unip.hotelapp.model.Room;
 
 public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.ViewHolder> {
     private List<Room> list;
+    private static ClickListener clickListener;
 
     public RoomsAdapter(List<Room> list) {
         this.list = list;
@@ -37,7 +38,8 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        viewHolder.bind(list.get(position));
+        Room item = list.get(position);
+        viewHolder.bind(item);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -46,6 +48,7 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.ViewHolder> 
         public ViewHolder(ItemListHomeRoomBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+
         }
 
         private void bind(Room item) {
@@ -64,11 +67,21 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.ViewHolder> 
             binding.typeTextView.setText(item.getType());
             binding.dailyPriceTextView.setText("R$ " + item.getPrice() + "/diária");
             binding.statusTextView.setText("Status: " + item.getStatus());
+
+            binding.reserveButton.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-
+            clickListener.onReserveClick(v, getAdapterPosition());
         }
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        RoomsAdapter.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void onReserveClick(View v, int position);
     }
 }

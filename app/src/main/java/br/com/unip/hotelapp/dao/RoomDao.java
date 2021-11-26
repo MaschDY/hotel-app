@@ -4,7 +4,6 @@ import android.util.Log;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +38,7 @@ public class RoomDao {
                 return returnList;
             }
         } catch (Exception e) {
-            Log.e("SQL Client", e.getMessage());
+            Log.e("SQL Rooms", e.getMessage());
         }
         return null;
     }
